@@ -8,7 +8,7 @@ if(length(args) > 0){
   obj_function_list <- unlist(strsplit(args[2],","))
   optim_type <- unlist(strsplit(args[3],","))
 } else {
-  size <- 'Large'
+  size <- `if`(exists('size'),size,'Large')
   optim_type <- c('max', 'min')
   obj_function_list <- c('TB_obj_1', 'TB_obj_2')
 
@@ -19,16 +19,15 @@ jackson_envir <- new.env()
 if (read_init) {
   starter_data <-
     readRDS(file.path(
-      ".",
-      "Data",
-      'Test Inverted V Networks',
+      "Simulations",
+      "Function Requirements",
       paste0(size, " Testing Initial Solution.rds")
     ))
   queues_df <- starter_data$network_df
   n_queues <- queues_df[, .N]
 }
 
-sys.source(file.path(".", "Code", "Jackson Network Test Bench.R"), envir = jackson_envir)
+sys.source(file.path("Simulations", "Jackson_Network_Test_Bench.R"), envir = jackson_envir)
 n_obj <- length(obj_function_list)
 optim_type_print <- optim_type
 obj_fun_print <- obj_function_list

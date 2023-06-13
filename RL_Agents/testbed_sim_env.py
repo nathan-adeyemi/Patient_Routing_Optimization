@@ -1,16 +1,20 @@
 import gymnasium as gym
 from gymnasium import spaces
 import numpy as np
-from rpy2 import rprojects
+import rpy2
+from rpy2 import robjects
 
 r = robjects.r
-r['source']('.Rprofile')
 
 class GridWorldEnv(gym.Env):
     metadata = {"render_modes": ["human", "rgb_array"], "render_fps": 4}
 
     def __init__(self, render_mode=None,size = 'Small'):
-        self.size = size 
+        robjects.r['source']('.Rprofile')
+        robjects.globalenv['size'] = size   
+        robjects.r['source']('Test_Bed_Opt_Setup.R')
+        self.n_actions = robjects.r('''queues_df[,.N]''')
+        
 
         # Observations are dictionaries with the agent's and the target's location.
         # Each location is encoded as an element of {0, ..., `size`}^2, i.e. MultiDiscrete([size, size]).
@@ -22,7 +26,7 @@ class GridWorldEnv(gym.Env):
         )
 
         # We have 4 actions, corresponding to "right", "up", "left", "down", "right"
-        self.action_space = spaces.Discrete(4)
+        self.action_space = spaces.Discrete(self.n_actions)
 
         """
         The following dictionary maps abstract actions from `self.action_space` to 

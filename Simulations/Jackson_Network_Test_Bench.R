@@ -1,14 +1,15 @@
 # Transition probabilities and intra-node distances
-if (identical(environment(), .GlobalEnv)) {
-  inverted_V_logical <-
-    readline(prompt = 'What type of queueing Network? \n 1. Inverted-V \n 2. Fully Connected Open Jackson \n 3. Closed Jackson Network')
-  if (inverted_V_logical == 1) {
-    inverted_V_logical <- T
-  } else{
-    inverted_V_logical <- F
-  }
-  n_queues <- 5
-}
+# if (identical(environment(), .GlobalEnv)) {
+#   inverted_V_logical <-
+#     readline(prompt = 'What type of queueing Network? \n 1. Inverted-V \n 2. Fully Connected Open Jackson \n 3. Closed Jackson Network')
+#   if (inverted_V_logical == 1) {
+#     inverted_V_logical <- T
+#   } else{
+#     inverted_V_logical <- F
+#   }
+#   n_queues <- 5
+# }
+inverted_V_logical <- T
 min_server <- 0
 max_server <- 5
 max_dist <- 10

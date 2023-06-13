@@ -672,12 +672,10 @@ MH.Network.sim <-
           simmer::run(
             until = sim.length
           ) %>%
-<<<<<<< HEAD
-<<<<<<< HEAD
+
           wrap(),
         mc.cores = min(length(rep),availableCores()),
         mc.set.seed = T
-=======
           wrap()#,
         # mc.cores = ifelse(
         #   test = length(rep) == 1,
@@ -685,12 +683,9 @@ MH.Network.sim <-
         #   no = availableCores()
         # ),
         # mc.set.seed = T
->>>>>>> c5cae59 (Minor updates)
-=======
           wrap(),
         mc.cores = min(length(rep),availableCores()),
         mc.set.seed = T
->>>>>>> 7fe6941 (Most recent updates)
       )
     }
     
@@ -857,9 +852,7 @@ full_sim <-
     } 
     return(results)
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 
 # Function for Mental Health Sim MOSA -------------------------------------
 mh_wait_quantile <- function(x){
@@ -875,6 +868,4 @@ mh_distance_range <- function(x){
   return(x[,.(variable = diff(range(Travel.Distance,na.rm = T))),by = list(Age,replication)
            ][,.(max_travel_range = max(variable)),by = replication])
 }
->>>>>>> 7fe6941 (Most recent updates)
-=======
->>>>>>> f4d354d (Further Updates:)
+
