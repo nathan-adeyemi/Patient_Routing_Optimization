@@ -1,6 +1,6 @@
 # source("./renv/activate.R")
 
-Sys.setenv(TERM_PROGRAM="vscode")
+Sys.setenv(TERM_PROGRAM = "vscode")
 # if (interactive() && Sys.getenv("RSTUDIO") == "") {
 #   source(file.path(Sys.getenv(if (.Platform$OS.type == "windows") "USERPROFILE" else "HOME"),
 #    ".vscode-R", "init.R"))
@@ -17,16 +17,16 @@ options(
 )
 
 # Utilities ----------------------------
-if(!interactive()){
+if (!interactive()) {
   library(tidyverse, quietly = T)
 }
 library(data.table, quietly = T)
 library(gtools, quietly = T)
 library(lubridate, quietly = T)
-library(pracma, quietly = T)
-library(dplyr,quietly = T)
-library(stringr,quietly = T)
-library(foreach,quietly = T)
+# library(pracma, quietly = T)
+library(dplyr, quietly = T)
+library(stringr, quietly = T)
+library(foreach, quietly = T)
 
 # Packages for Statistics/Bootstrapping/etc. ------------------------------
 library(boot, quietly = T)
