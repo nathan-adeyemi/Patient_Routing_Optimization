@@ -1,0 +1,24 @@
+experiment_info:
+  results_dir: './experiments/testbenches/results_and_checkpoints'
+  num_workers:
+  
+  training:
+    vf_optim:
+      separate_models:
+
+  eval:
+    frequency:
+      units:
+    num_episodes:
+    num_workers:
+  
+  env:
+    network_size:
+
+hyper_params:
+  lr:
+    min:
+    max:
+  gc:
+    min:  
+    max:
