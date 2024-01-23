@@ -13,7 +13,7 @@ experiment_info:
     num_workers:
   
   env:
-    network_size:
+    network_size: # Should be decided when running the shell command to execute the python file
 
 hyper_params:
   lr:
