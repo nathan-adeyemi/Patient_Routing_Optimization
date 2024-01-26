@@ -1,7 +1,0 @@
-README.md
-setup.py
-test_bench_env.egg-info/PKG-INFO
-test_bench_env.egg-info/SOURCES.txt
-test_bench_env.egg-info/dependency_links.txt
-test_bench_env.egg-info/requires.txt
-test_bench_env.egg-info/top_level.txt

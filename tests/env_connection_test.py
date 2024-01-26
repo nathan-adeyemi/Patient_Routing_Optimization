@@ -39,4 +39,4 @@ if __name__ == "__main__":
     missing_reward_ids = observation_ids - reward_ids
     print(missing_reward_ids.remove('terminate') == remaining_rewards_ids)
     
-    print('Env Trajectory Complete')
+    print('Env Trajectory Complete') 
